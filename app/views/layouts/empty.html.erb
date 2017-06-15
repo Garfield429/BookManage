@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield :title %>  EOP (Wizcloud)</title>
+  <meta name="keywords" content="<%= yield :keywords -%>" />
+  <meta name="description" content="<%= yield :description -%>" />
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= csrf_meta_tags %>
+  <!--[if IE 7]>
+    <%= stylesheet_link_tag "font-awesome-ie7" %>
+  <![endif]-->
+</head>
+
+<!--[if lt IE 7]><body class="ie ie6 lte9 lte8 lte7"><![endif]-->
+<!--[if IE 7]><body class="ie ie7 lte9 lte8 lte7"><![endif]-->
+<!--[if IE 8]><body class="ie ie8 lte9 lte8"><![endif]-->
+<!--[if IE 9]><body class="ie ie9 lte9"><![endif]-->
+<!--[if !IE]><!--><body><!--<![endif]-->
+
+
+<%= yield %>
+
+</body>
+</html>
+

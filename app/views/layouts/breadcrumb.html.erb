@@ -1,0 +1,12 @@
+<div class="breadcrumb breadcrumb-small breadcrumb-clear">
+  <div class="b-wrap">
+    <div class="links">
+      <i class="fa fa-map-signs fa-1"></i> 
+      <% breadcrumb_array.each.with_index do |b,idx| %>
+        <!-- <li class="<%= "active" if idx == breadcrumb_array.size-1 %>"> -->
+          <%= b %> <%= "&gt;".html_safe unless idx == breadcrumb_array.size-1 %>
+        <!-- </li> -->
+      <% end %>
+    </div>
+  </div>
+</div>

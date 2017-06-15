@@ -1,0 +1,42 @@
+<!-- Javascripts
+================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<%= javascript_include_tag (current_media == "mobile" ? "application_phone" : "application") %>
+<!--[if lt IE 9]>
+  <%= javascript_include_tag "IEhack" %>
+<![endif]-->
+
+
+<!--[if IE 6]>
+  <%= javascript_include_tag "DD_belatedPNG" %>
+  <script type="text/javascript">
+    /* EXAMPLE */
+    DD_belatedPNG.fix('.png_bg');
+    /* 将 .png_bg 改成你应用了透明PNG的CSS选择器,例如我例子中的'.trans'*/
+  </script>
+<![endif]-->
+
+<script type="text/javascript" charset="utf-8">
+  // <%= params.to_json.html_safe %>
+  var js_class = '<%= params[:controller] %>';
+  var init_method = '<%= params[:action] %>'
+  js_class = js_class.replace('\/','_');
+  try{
+    this.cjp = eval(js_class);
+  } catch (e){
+  };
+
+
+
+  if( this.cjp && typeof this.cjp.init == "function" ) {
+    this.cjp.init();
+  }
+  if( this.cjp ){
+    try{
+      eval('this.cjp.'+ init_method +'()');
+    } catch (e) {
+
+    }
+  }
+</script>
+
