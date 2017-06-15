@@ -1,29 +1,46 @@
-<p id="notice"><%= notice %></p>
+<div class="table-pannel">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th style="width:30%;">属性</th>
+          <th>值</th>
+        </tr>
+      </thead>
 
-<p>
-  <strong>Name:</strong>
-  <%= @book.name %>
-</p>
+      <tbody>
+    
+        <tr>
+          <th><%= Book.human_attribute_name(:name) %>:</th>
+          <td><%= @book.name %></td>
+        </tr>
+    
+        <tr>
+          <th><%= Book.human_attribute_name(:author) %>:</th>
+          <td><%= @book.author %></td>
+        </tr>
+    
+        <tr>
+          <th><%= Book.human_attribute_name(:descript) %>:</th>
+          <td><%= @book.descript %></td>
+        </tr>
+    
+        <tr>
+          <th><%= Book.human_attribute_name(:publisher) %>:</th>
+          <td><%= @book.publisher %></td>
+        </tr>
+    
+        <tr>
+          <th><%= Book.human_attribute_name(:page_number) %>:</th>
+          <td><%= @book.page_number %></td>
+        </tr>
+    
+      </tbody>
+    </table>
+</div>
 
-<p>
-  <strong>Author:</strong>
-  <%= @book.author %>
-</p>
+<div class="other-actions">
+  <%= link_to t('buttons.edit'), edit_book_path(@book), class: 'button button-rounded button-flat button-flat-primary' %>
+  <%= link_to t('buttons.back'), books_path, class: 'button button-rounded button-flat' %>
+</div>
 
-<p>
-  <strong>Descript:</strong>
-  <%= @book.descript %>
-</p>
 
-<p>
-  <strong>Publisher:</strong>
-  <%= @book.publisher %>
-</p>
-
-<p>
-  <strong>Page number:</strong>
-  <%= @book.page_number %>
-</p>
-
-<%= link_to 'Edit', edit_book_path(@book) %> |
-<%= link_to 'Back', books_path %>
