@@ -1,0 +1,26 @@
+<div class="table-pannel">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th style="width:30%;">属性</th>
+          <th>值</th>
+        </tr>
+      </thead>
+
+      <tbody>
+    <% attributes.reject(&:password_digest?).each do |attribute| %>
+        <tr>
+          <th><%%= <%= singular_table_name.classify %>.human_attribute_name(:<%= attribute.name %>) %>:</th>
+          <td><%%= @<%= singular_table_name %>.<%= attribute.name %> %></td>
+        </tr>
+    <% end %>
+      </tbody>
+    </table>
+</div>
+
+<div class="other-actions">
+  <%%= link_to t('buttons.edit'), edit_<%= singular_table_name %>_path(@<%= singular_table_name %>), class: 'button button-rounded button-flat button-flat-primary' %>
+  <%%= link_to t('buttons.back'), <%= index_helper %>_path, class: 'button button-rounded button-flat' %>
+</div>
+
+

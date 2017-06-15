@@ -1,0 +1,14 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+      编辑<%%= <%= singular_table_name.classify %>.model_name.human %>
+    </h3>
+  </div>
+  <div class="panel-body">
+    <%%= render 'form' %>
+  </div>
+</div>
+<div class="other-actions">
+  <%%= link_to t('buttons.show'), <%= "[:#{prefix}, @#{singular_table_name}]" %>, class: 'button button-rounded button-flat button-flat-primary' %>
+  <%%= link_to t('buttons.back'), <%= prefixed_index_helper %>_path, class: 'button button-rounded button-flat' %>
+</div>
