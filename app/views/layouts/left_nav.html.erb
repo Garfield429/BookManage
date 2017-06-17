@@ -1,0 +1,36 @@
+<div class="sidebar">
+  <i class="fa fa-bars"></i>
+</div>
+
+<ul class="vertically-nav fixed">
+
+  <li class="<%= "active" if request.fullpath =~ /portal/ %>">
+    <%= link_to "portal_url" do %>
+      <i class="fa fa-desktop fa-1x fa-fw"></i> <span>工作台</span>
+    <% end %>
+  </li>
+
+  <li class="<%= "active" if request.fullpath =~ /org\/calendar/ %>">
+    <%= link_to "portal_url" do %>
+      <i class="fa fa-calendar fa-1x fa-fw"></i> <span>日程</span>
+    <% end %>
+  </li>
+  <li class="divider"></li>
+  <li class="<%= "active" if request.fullpath =~ /org\/titles/ %>">
+    <%= link_to  "org_titles_url" do %>
+     <i class="fa fa-th-list fa-1x fa-fw"></i> <span>职位设置</span>
+    <% end %>
+  </li>
+  <li class="<%= "active" if request.fullpath =~ /org\/departments/ %>">
+    <%= link_to "org_departments_url" do %>
+     <i class="fa fa-th-large fa-1x fa-fw"></i> <span>部门管理</span>
+    <% end %>
+  </li>
+  <li class="<%= "active" if request.fullpath =~ /org\/users/ %>">
+    <%= link_to "org_users_url" do %>
+     <i class="fa fa-group fa-1x fa-fw"></i> <span>员工管理</span>
+    <% end %>
+  </li>
+  <li class="divider"></li>
+
+</ul>

@@ -1,12 +1,8 @@
-<%= simple_form_for(@book) do |f| %>
+<%= simple_form_for(@publisher, url: '/publishers') do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :name %>
-    <%= f.input :author %>
-    <%= f.input :descript %>
-    <%= f.input :publisher %>
-    <%= f.input :page_number %>
   </div>
 
   <div class="form-actions">
